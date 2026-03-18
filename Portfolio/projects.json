@@ -1,0 +1,112 @@
+{
+  "data": [
+    {
+      "title": "Tableau de bord React",
+      "text": "Une application de tableau de bord complète avec graphiques interactifs, gestion des utilisateurs et authentification.",
+      "image": "images/hero_setup.jpg",
+      "technologies": ["React", "Chart.js", "TailwindCSS", "API REST"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://example.com"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com"
+        }
+      ]
+    },
+    {
+      "title": "Plateforme de gestion de tâches",
+      "text": "Une application full-stack pour gérer les tâches avec collaboration en temps réel, assignation et notifications.",
+      "image": "images/hero_setup.jpg",
+      "technologies": ["React", "Node.js", "MongoDB", "Socket.IO"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://example.com"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com"
+        }
+      ]
+    },
+    {
+      "title": "Application e-commerce",
+      "text": "Une boutique en ligne complète avec panier, paiement Stripe intégré et système de commandes.",
+      "image": "images/hero_setup.jpg",
+      "technologies": ["React", "Stripe", "Express", "PostgreSQL"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://example.com"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com"
+        }
+      ]
+    },
+    {
+      "title": "Portfolio personnel",
+      "text": "Un portfolio moderne et responsive construit avec Vue.js et Tailwind CSS, mettant en avant les meilleures pratiques web.",
+      "image": "images/hero_setup.jpg",
+      "technologies": ["Vue.js", "TailwindCSS", "Vite"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://example.com"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com"
+        }
+      ]
+    },
+    {
+      "title": "API REST avancée",
+      "text": "Une API RESTful robuste avec authentification JWT, validation des données et documentation Swagger complète.",
+      "image": "images/hero_setup.jpg",
+      "technologies": ["Node.js", "Express", "JWT", "PostgreSQL"],
+      "buttons": [
+        {
+          "aria": "Documentation",
+          "icon": "WebSVG",
+          "href": "https://example.com"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com"
+        }
+      ]
+    },
+    {
+      "title": "Application chat en temps réel",
+      "text": "Une application de messagerie instantanée avec Canal privé, notifications et persistance des messages.",
+      "image": "images/hero_setup.jpg",
+      "technologies": ["React", "WebSocket", "Firebase", "Material-UI"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://example.com"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com"
+        }
+      ]
+    }
+  ]
+}
