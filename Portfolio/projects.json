@@ -1,92 +1,92 @@
 {
   "data": [
     {
-      "title": "Tableau de bord React",
-      "text": "Une application de tableau de bord complète avec graphiques interactifs, gestion des utilisateurs et authentification.",
-      "image": "images/hero_setup.jpg",
-      "technologies": ["React", "Chart.js", "TailwindCSS", "API REST"],
+      "title": "WikiCiné",
+      "text": "Une plateforme centralisée et interactive dédiée aux cinéphiles, où les utilisateurs peuvent accéder à des informations complètes sur les films, des critiques et des discussions.",
+      "image": "https://images.wakelet.com/resize?id=7aE2E4k9CoQD4wvMb8oAS&w=1600&h=actual&q=85",
+      "technologies": ["React", "Tailwind CSS", "Supabase"],
       "buttons": [
         {
           "aria": "Voir le site",
           "icon": "WebSVG",
-          "href": "https://example.com"
+          "href": "https://wikicine-dawan.netlify.app/"
         },
         {
           "aria": "Code source",
           "icon": "GITSVG",
-          "href": "https://github.com"
+          "href": "https://github.com/JohanChereau/wikicine-dawan.git"
         }
       ]
     },
     {
-      "title": "Plateforme de gestion de tâches",
-      "text": "Une application full-stack pour gérer les tâches avec collaboration en temps réel, assignation et notifications.",
-      "image": "images/hero_setup.jpg",
-      "technologies": ["React", "Node.js", "MongoDB", "Socket.IO"],
+      "title": "Métronome",
+      "text": "Métronome en ligne pour les musiciens, offrant une interface intuitive et des fonctionnalités personnalisables pour maintenir un tempo précis lors de la pratique musicale.",
+      "image": "https://images.wakelet.com/resize?id=LKWlirJzY6nfUCfuGRM88&w=1600&h=actual&q=85",
+      "technologies": ["Next.js", "React", "Typescript", "Tailwind CSS"],
       "buttons": [
         {
           "aria": "Voir le site",
           "icon": "WebSVG",
-          "href": "https://example.com"
+          "href": "https://fantastic-cuchufli-768e7c.netlify.app/"
         },
         {
           "aria": "Code source",
           "icon": "GITSVG",
-          "href": "https://github.com"
+          "href": "https://github.com/Thomas92230/metronome-music.git"
         }
       ]
     },
     {
-      "title": "Application e-commerce",
-      "text": "Une boutique en ligne complète avec panier, paiement Stripe intégré et système de commandes.",
-      "image": "images/hero_setup.jpg",
-      "technologies": ["React", "Stripe", "Express", "PostgreSQL"],
+      "title": "Location immobilière Kasa",
+      "text": "Site de location immobilière, pour voyager dans le monde entier avec Kasa. Découvrez des locations proposant confort, activités et commerces à proximité.",
+      "image": "https://images.wakelet.com/resize?id=isJXKzX3HtWIlMDtL-Ku9&h=345&w=768&q=85",
+      "technologies": ["HTML", "CSS", "Javascript"],
       "buttons": [
         {
           "aria": "Voir le site",
           "icon": "WebSVG",
-          "href": "https://example.com"
+          "href": "https://64a8192c47d9ee0e1509f73b--frolicking-baklava-cca911.netlify.app/"
         },
         {
           "aria": "Code source",
           "icon": "GITSVG",
-          "href": "https://github.com"
+          "href": "https://github.com/Thomas92230/kasaproject.git"
         }
       ]
     },
     {
-      "title": "Portfolio personnel",
-      "text": "Un portfolio moderne et responsive construit avec Vue.js et Tailwind CSS, mettant en avant les meilleures pratiques web.",
-      "image": "images/hero_setup.jpg",
-      "technologies": ["Vue.js", "TailwindCSS", "Vite"],
+      "title": "Maquette Figma Wikiciné",
+      "text": "Maquette Figma de l'application Wikiciné, conçue pour offrir une esthétique moderne tout en privilégiant la facilité d'utilisation.",
+      "image": "https://images.wakelet.com/resize?id=4xzyvfB3M5OBzwk_hg_z5&w=1600&h=actual&q=85",
+      "technologies": ["Figma", "Iconify"],
       "buttons": [
         {
           "aria": "Voir le site",
           "icon": "WebSVG",
-          "href": "https://example.com"
+          "href": "https://www.figma.com/proto/o62Shvfb4aE5Z16AzzWogM/Maquette-Wikicin%C3%A9?node-id=5-1879&p=f&t=HzxjyvtmHZ7r5Vzs-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A1879&show-proto-sidebar=1"
         },
         {
           "aria": "Code source",
           "icon": "GITSVG",
-          "href": "https://github.com"
+          "href": "https://github.com/JohanChereau/wikicine-dawan.git"
         }
       ]
     },
     {
-      "title": "API REST avancée",
-      "text": "Une API RESTful robuste avec authentification JWT, validation des données et documentation Swagger complète.",
-      "image": "images/hero_setup.jpg",
-      "technologies": ["Node.js", "Express", "JWT", "PostgreSQL"],
+      "title": "Agence d'évènementiel 77events",
+      "text": "Site pour une agence d'évènementiel qui organise des prestations partout dans le monde. L'objectif de la mission était de débugger le site de l'agence à l'aide de tests afin de simuler les différents composants et corriger les bugs à la source.",
+      "image": "https://images.wakelet.com/resize?id=TXUVXGxVo40tsaEwey-Jk&h=341&w=768&q=85",
+      "technologies": ["HTML", "CSS", "React", "Jest"],
       "buttons": [
         {
-          "aria": "Documentation",
+          "aria": "Voir le site",
           "icon": "WebSVG",
-          "href": "https://example.com"
+          "href": "https://64a604241d362213a14d43e5--sensational-croquembouche-903096.netlify.app/"
         },
         {
           "aria": "Code source",
           "icon": "GITSVG",
-          "href": "https://github.com"
+          "href": "https://github.com/Thomas92230/event.git"
         }
       ]
     },

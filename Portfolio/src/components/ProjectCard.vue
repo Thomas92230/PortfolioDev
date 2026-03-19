@@ -17,12 +17,12 @@
     <!-- Project Links -->
     <div class="flex gap-3">
       <a v-if="project.website" :href="project.website" target="_blank" rel="noopener"
-         class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-center transition flex items-center justify-center gap-2">
+         class="flex-1 bg-slate-900 text-white py-2 rounded-lg text-center flex items-center justify-center gap-2 transition-all duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg hover:shadow-slate-400">
         <i class="fas fa-globe"></i>
         <span>Voir</span>
       </a>
       <a v-if="project.github" :href="project.github" target="_blank" rel="noopener"
-         class="flex-1 bg-slate-800 hover:bg-slate-900 text-white py-2 rounded-lg text-center transition flex items-center justify-center gap-2">
+         class="flex-1 bg-slate-900 text-white py-2 rounded-lg text-center flex items-center justify-center gap-2 transition-all duration-300 hover:bg-blue-600 hover:scale-105 hover:shadow-lg hover:shadow-slate-400">
         <i class="fab fa-github"></i>
         <span>Code</span>
       </a>

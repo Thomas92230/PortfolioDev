@@ -8,10 +8,20 @@
           <div class="text-2xl font-bold text-gradient">Icham BOUDEHANE</div>
           
           <!-- Desktop Menu -->
-          <div class="hidden md:flex gap-6">
-            <a href="#projets" class="text-slate-600 hover:text-blue-600 transition">Projets</a>
-            <a href="#competences" class="text-slate-600 hover:text-blue-600 transition">Compétences</a>
-            <a href="#contact" class="text-slate-600 hover:text-blue-600 transition">Contact</a>
+          <div class="hidden md:flex items-center gap-6">
+            <div class="flex gap-6" style="margin-right: 2rem;">
+              <a href="#" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.profile }}</a>
+              <a href="#projets" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.projects }}</a>
+              <a href="#competences" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.skills }}</a>
+              <a href="#diplomes" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.diplomas }}</a>
+              <a href="#contact" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.contact }}</a>
+            </div>
+            <!-- Language switcher -->
+            <div class="flex border-l border-slate-200 pl-6" style="gap: 0.7rem;">
+              <button @click="setLang('fr')" @mouseenter="e => e.target.style.filter='drop-shadow(0 0 6px rgba(59,130,246,0.9))'" @mouseleave="e => lang !== 'fr' && (e.target.style.filter='none')" :style="lang === 'fr' ? 'filter: drop-shadow(0 0 6px rgba(59,130,246,0.9))' : 'opacity: 0.4'" class="text-xl transition-all duration-300 cursor-pointer" title="Français">🇫🇷</button>
+              <button @click="setLang('en')" @mouseenter="e => e.target.style.filter='drop-shadow(0 0 6px rgba(59,130,246,0.9))'" @mouseleave="e => lang !== 'en' && (e.target.style.filter='none')" :style="lang === 'en' ? 'filter: drop-shadow(0 0 6px rgba(59,130,246,0.9))' : 'opacity: 0.4'" class="text-xl transition-all duration-300 cursor-pointer" title="English">🇬🇧</button>
+              <button @click="setLang('es')" @mouseenter="e => e.target.style.filter='drop-shadow(0 0 6px rgba(59,130,246,0.9))'" @mouseleave="e => lang !== 'es' && (e.target.style.filter='none')" :style="lang === 'es' ? 'filter: drop-shadow(0 0 6px rgba(59,130,246,0.9))' : 'opacity: 0.4'" class="text-xl transition-all duration-300 cursor-pointer" title="Español">🇪🇸</button>
+            </div>
           </div>
           
           <!-- Mobile Menu Button -->
@@ -28,9 +38,16 @@
         <!-- Mobile Menu -->
         <div v-if="isMenuOpen" class="md:hidden mt-4 pb-4 border-t border-gray-200">
           <div class="flex flex-col space-y-4 pt-4">
-            <a href="#projets" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">Projets</a>
-            <a href="#competences" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">Compétences</a>
-            <a href="#contact" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">Contact</a>
+            <a href="#" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.profile }}</a>
+            <a href="#projets" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.projects }}</a>
+            <a href="#competences" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.skills }}</a>
+            <a href="#diplomes" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.diplomas }}</a>
+            <a href="#contact" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.contact }}</a>
+            <div class="flex gap-3 pt-2 border-t border-slate-200">
+              <button @click="setLang('fr')" :class="['text-xl transition-all duration-200', lang === 'fr' ? 'opacity-100 scale-125' : 'opacity-40']" title="Français">🇫🇷</button>
+              <button @click="setLang('en')" :class="['text-xl transition-all duration-200', lang === 'en' ? 'opacity-100 scale-125' : 'opacity-40']" title="English">🇬🇧</button>
+              <button @click="setLang('es')" :class="['text-xl transition-all duration-200', lang === 'es' ? 'opacity-100 scale-125' : 'opacity-40']" title="Español">🇪🇸</button>
+            </div>
           </div>
         </div>
       </div>
@@ -46,22 +63,22 @@
               Boudehane Icham
             </h1>
             <h2 class="text-xl lg:text-2xl font-semibold mb-4 text-gray-300 uppercase">
-              Concepteur d'applications, front-end & intégrateur web
+              {{ t.hero.subtitle }}
             </h2>
             <div class="text-base text-gray-200 mb-4 leading-relaxed max-w-xl">
-              <span v-for="(word, index) in bioWords" :key="index" 
-                    class="fade-in-word inline-block mr-2"
-                    :style="{ animationDelay: (index * 0.03) + 's' }">
-                {{ word }}
-              </span>
+              {{ t.hero.bio }}
             </div>
             <div class="flex gap-4">
-              <a href="#projets" class="btn-primary px-8 py-3 rounded-lg text-white font-semibold inline-block">
-                Voir mes projets
+              <a href="#projets" class="btn-primary px-8 py-3 rounded-lg text-white font-semibold" style="display: flex; align-items: center; justify-content: center;">
+                {{ t.hero.cta }}
               </a>
               <a href="https://www.linkedin.com/in/icham-boudehane-dev/" target="_blank" rel="noopener" 
                  class="px-8 py-3 rounded-lg border-2 border-white text-white font-semibold hover:bg-white hover:text-slate-900 transition">
                 <i class="fab fa-linkedin mr-2"></i> LinkedIn
+              </a>
+              <a href="/images/Icham_BOUDEHANE_CV_Dev.pdf" download
+                 class="px-8 py-3 rounded-lg border-2 border-white text-white font-semibold hover:bg-white hover:text-slate-900 transition">
+                <i class="fas fa-download mr-2"></i> {{ t.hero.downloadCV }}
               </a>
             </div>
           </div>
@@ -82,9 +99,9 @@
     <section id="competences" class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] text-white py-20">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-14">
-          <h2 class="text-4xl font-bold mb-4">Compétences</h2>
+          <h2 class="text-4xl font-bold mb-4">{{ t.skills.title }}</h2>
           <p class="text-lg text-slate-300 max-w-2xl mx-auto">
-            Technologies, outils et langages que j'utilise régulièrement dans mes projets.
+            {{ t.skills.subtitle }}
           </p>
         </div>
 
@@ -124,11 +141,11 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projets" class="bg-white">
-      <div class="max-w-6xl mx-auto px-4 py-20 bg-white">
+    <section id="projets" class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] py-20">
+      <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-16">
-          <h2 class="text-5xl font-bold mb-4 text-slate-900">Mes Projets</h2>
-          <p class="text-xl text-slate-600">Une sélection de projets sur lesquels j'ai travaillé</p>
+          <h2 class="text-5xl font-bold mb-4 text-white">{{ t.projects.title }}</h2>
+          <p class="text-xl text-slate-300">{{ t.projects.subtitle }}</p>
         </div>
 
         <!-- Projects Grid -->
@@ -145,12 +162,12 @@
     </section>
 
     <!-- Diplomas Section -->
-    <section class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] text-white py-20">
+    <section id="diplomes" class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] text-white py-20">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-14">
-          <h2 class="text-5xl font-bold mb-4">Diplômes</h2>
+          <h2 class="text-5xl font-bold mb-4">{{ t.diplomas.title }}</h2>
           <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-            Parcours et formations suivies, de la plus récente à la plus ancienne.
+            {{ t.diplomas.subtitle }}
           </p>
         </div>
 
@@ -165,11 +182,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-white py-20">
+    <section id="contact" class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] py-20">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <h2 class="text-5xl font-bold mb-6">Parlons ensemble</h2>
-        <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-          Vous avez un projet ou une opportunité ? N'hésitez pas à me contacter !
+        <h2 class="text-5xl font-bold mb-6 text-white">{{ t.contact.title }}</h2>
+        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+          {{ t.contact.subtitle }}
         </p>
 
         <div class="flex gap-6 justify-center mb-10">
@@ -190,9 +207,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white text-slate-900 py-8 border-t border-slate-200">
+    <footer class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] text-white py-8 border-t border-slate-700">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <p class="text-gray-400">© {{ new Date().getFullYear() }} Icham BOUDEHANE. Tous droits réservés.</p>
+        <p class="text-slate-400">© {{ new Date().getFullYear() }} Icham BOUDEHANE. {{ t.footer }}</p>
       </div>
     </footer>
 
@@ -210,28 +227,15 @@ import SkillCard from './components/SkillCard.vue'
 import TechnologyCard from './components/TechnologyCard.vue'
 import DiplomaCard from './components/DiplomaCard.vue'
 import Modal from './components/Modal.vue'
+import { translations } from './i18n.js'
 
 export default {
   name: 'App',
-  components: {
-    ProjectCard,
-    SkillCard,
-    TechnologyCard,
-    DiplomaCard,
-    Modal
-  },
+  components: { ProjectCard, SkillCard, TechnologyCard, DiplomaCard, Modal },
   data() {
     return {
+      lang: 'fr',
       selectedProject: null,
-      bioWords: [
-        'Je', 'suis', 'Icham', 'BOUDEHANE,', 'développeur', 'front', 'et', 'concepteur', 'd\'applications',
-        'spécialisé', 'en', 'React.', 'Je', 'maîtrise', 'également', 'divers', 'autres', 'langages.',
-        'Actuellement', 'en', 'recherche', 'd\'une', 'deuxième', 'année', 'd\'alternance', 'en',
-        'tant', 'que', 'concepteur', 'd\'applications', 'ou', 'développeur', 'front.', 'Passionné,',
-        'créatif', 'et', 'curieux,', 'je', 'souhaite', 'continuer', 'à', 'évoluer', 'dans', 'ce',
-        'métier', 'qui', 'me', 'passionne.', 'Le', 'travail', 'd\'équipe', 'ne', 'm\'effraie', 'pas,',
-        'et', 'je', 'suis', 'mobile', 'dans', 'toute', 'la', 'région', 'parisienne.'
-      ],
       skillsSlider: [
         { name: 'React', icon: 'fab fa-react', color: '#61dafb' },
         { name: 'JavaScript', icon: 'fab fa-js-square', color: '#f7df1e' },
@@ -348,7 +352,15 @@ export default {
       isMenuOpen: false
     }
   },
+  computed: {
+    t() {
+      return translations[this.lang]
+    }
+  },
   methods: {
+    setLang(lang) {
+      this.lang = lang
+    },
     pauseSlider() {
       if (this.$refs.sliderContainer) {
         this.$refs.sliderContainer.style.animationPlayState = 'paused'
