@@ -64,7 +64,7 @@
               <a href="#projets" class="btn-primary px-6 py-3 rounded-lg text-white font-semibold text-sm flex items-center justify-center">
                 {{ t.hero.cta }}
               </a>
-              <a href="https://www.linkedin.com/in/icham-boudehane-dev/" target="_blank" rel="noopener"
+              <a href="https://www.linkedin.com/in/icham-boudehane-dev/" target="_blank" rel="noopener noreferrer"
                  class="px-6 py-3 rounded-lg border-2 border-white text-white font-semibold text-sm hover:bg-white hover:text-slate-900 transition">
                 <i class="fab fa-linkedin mr-2"></i> LinkedIn
               </a>
@@ -238,7 +238,7 @@
              class="p-4 bg-slate-900 text-white rounded-full hover:bg-blue-600 transition">
             <i class="fab fa-github text-2xl"></i>
           </a>
-          <a href="https://www.linkedin.com/in/icham-boudehane-dev/" target="_blank" rel="noopener"
+          <a href="https://www.linkedin.com/in/icham-boudehane-dev/" target="_blank" rel="noopener noreferrer"
              class="p-4 bg-slate-900 text-white rounded-full hover:bg-blue-600 transition">
             <i class="fab fa-linkedin text-2xl"></i>
           </a>
