@@ -234,15 +234,15 @@
         </p>
 
         <div class="flex gap-6 justify-center mb-10">
-          <a href="https://github.com" target="_blank" rel="noopener"
+          <a href="https://github.com/Thomas92230" target="_blank" rel="noopener"
              class="p-4 bg-slate-900 text-white rounded-full hover:bg-blue-600 transition">
             <i class="fab fa-github text-2xl"></i>
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener"
+          <a href="https://www.linkedin.com/in/icham-boudehane-dev/" target="_blank" rel="noopener"
              class="p-4 bg-slate-900 text-white rounded-full hover:bg-blue-600 transition">
             <i class="fab fa-linkedin text-2xl"></i>
           </a>
-          <a href="mailto:contact@example.com"
+          <a href="mailto:boudehaneicham@gmail.com"
              class="p-4 bg-slate-900 text-white rounded-full hover:bg-blue-600 transition">
             <i class="fas fa-envelope text-2xl"></i>
           </a>
