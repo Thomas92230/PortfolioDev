@@ -6,7 +6,7 @@
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <div class="text-2xl font-bold text-gradient">Icham BOUDEHANE</div>
-          
+
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center gap-6">
             <div class="flex gap-6" style="margin-right: 2rem;">
@@ -17,13 +17,9 @@
               <a href="#contact" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.contact }}</a>
             </div>
             <!-- Language switcher -->
-            <div class="flex border-l border-slate-200 pl-6" style="gap: 0.7rem;">
-              <button @click="setLang('fr')" @mouseenter="e => e.target.style.filter='drop-shadow(0 0 6px rgba(59,130,246,0.9))'" @mouseleave="e => lang !== 'fr' && (e.target.style.filter='none')" :style="lang === 'fr' ? 'filter: drop-shadow(0 0 6px rgba(59,130,246,0.9))' : 'opacity: 0.4'" class="text-xl transition-all duration-300 cursor-pointer" title="Français">🇫🇷</button>
-              <button @click="setLang('en')" @mouseenter="e => e.target.style.filter='drop-shadow(0 0 6px rgba(59,130,246,0.9))'" @mouseleave="e => lang !== 'en' && (e.target.style.filter='none')" :style="lang === 'en' ? 'filter: drop-shadow(0 0 6px rgba(59,130,246,0.9))' : 'opacity: 0.4'" class="text-xl transition-all duration-300 cursor-pointer" title="English">🇬🇧</button>
-              <button @click="setLang('es')" @mouseenter="e => e.target.style.filter='drop-shadow(0 0 6px rgba(59,130,246,0.9))'" @mouseleave="e => lang !== 'es' && (e.target.style.filter='none')" :style="lang === 'es' ? 'filter: drop-shadow(0 0 6px rgba(59,130,246,0.9))' : 'opacity: 0.4'" class="text-xl transition-all duration-300 cursor-pointer" title="Español">🇪🇸</button>
-            </div>
+            <LanguageSwitcher :current-lang="lang" @set-lang="setLang" />
           </div>
-          
+
           <!-- Mobile Menu Button -->
           <div class="md:hidden">
             <button @click="toggleMenu" class="text-slate-600 hover:text-blue-600 focus:outline-none">
@@ -34,7 +30,7 @@
             </button>
           </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div v-if="isMenuOpen" class="md:hidden mt-4 pb-4 border-t border-gray-200">
           <div class="flex flex-col space-y-4 pt-4">
@@ -43,11 +39,7 @@
             <a href="#competences" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.skills }}</a>
             <a href="#diplomes" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.diplomas }}</a>
             <a href="#contact" @click="closeMenu" class="text-slate-600 hover:text-blue-600 transition">{{ t.nav.contact }}</a>
-            <div class="flex gap-3 pt-2 border-t border-slate-200">
-              <button @click="setLang('fr')" :class="['text-xl transition-all duration-200', lang === 'fr' ? 'opacity-100 scale-125' : 'opacity-40']" title="Français">🇫🇷</button>
-              <button @click="setLang('en')" :class="['text-xl transition-all duration-200', lang === 'en' ? 'opacity-100 scale-125' : 'opacity-40']" title="English">🇬🇧</button>
-              <button @click="setLang('es')" :class="['text-xl transition-all duration-200', lang === 'es' ? 'opacity-100 scale-125' : 'opacity-40']" title="Español">🇪🇸</button>
-            </div>
+            <LanguageSwitcher :current-lang="lang" @set-lang="setLang" :is-mobile="true" />
           </div>
         </div>
       </div>
@@ -68,16 +60,16 @@
             <div class="text-base text-gray-200 mb-4 leading-relaxed max-w-xl">
               {{ t.hero.bio }}
             </div>
-            <div class="flex gap-4">
-              <a href="#projets" class="btn-primary px-8 py-3 rounded-lg text-white font-semibold" style="display: flex; align-items: center; justify-content: center;">
+            <div class="flex flex-wrap gap-4">
+              <a href="#projets" class="btn-primary px-6 py-3 rounded-lg text-white font-semibold text-sm flex items-center justify-center">
                 {{ t.hero.cta }}
               </a>
-              <a href="https://www.linkedin.com/in/icham-boudehane-dev/" target="_blank" rel="noopener" 
-                 class="px-8 py-3 rounded-lg border-2 border-white text-white font-semibold hover:bg-white hover:text-slate-900 transition">
+              <a href="https://www.linkedin.com/in/icham-boudehane-dev/" target="_blank" rel="noopener"
+                 class="px-6 py-3 rounded-lg border-2 border-white text-white font-semibold text-sm hover:bg-white hover:text-slate-900 transition">
                 <i class="fab fa-linkedin mr-2"></i> LinkedIn
               </a>
               <a href="/images/Icham_BOUDEHANE_CV_Dev.pdf" download
-                 class="px-8 py-3 rounded-lg border-2 border-white text-white font-semibold hover:bg-white hover:text-slate-900 transition">
+                 class="px-6 py-3 rounded-lg border-2 border-white text-white font-semibold text-sm hover:bg-white hover:text-slate-900 transition">
                 <i class="fas fa-download mr-2"></i> {{ t.hero.downloadCV }}
               </a>
             </div>
@@ -87,7 +79,7 @@
           <div class="fade-in-up" style="animation-delay: 0.1s">
             <div class="relative">
               <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl opacity-30"></div>
-              <img src="/images/hero_setup.jpg" alt="Icham BOUDEHANE" 
+              <img src="/images/hero_setup.jpg" alt="Icham BOUDEHANE"
                    class="relative rounded-full w-full max-w-md mx-auto drop-shadow-2xl">
             </div>
           </div>
@@ -106,33 +98,32 @@
         </div>
 
         <!-- Technologies Slider -->
-        <div class="relative mb-16">
-          <div class="overflow-hidden rounded-2xl">
-            <div class="flex gap-6 pb-4 slider-container" ref="sliderContainer">
-              <!-- Première série de cartes -->
-              <TechnologyCard 
-                v-for="tech in skillsSlider" 
-                :key="'first-' + tech.name"
-                :tech="tech"
-                @pause-slider="pauseSlider"
-                @resume-slider="resumeSlider"
-              />
-              <!-- Deuxième série de cartes (dupliquée pour la boucle infinie) -->
-              <TechnologyCard 
-                v-for="tech in skillsSlider" 
-                :key="'second-' + tech.name"
-                :tech="tech"
-                @pause-slider="pauseSlider"
-                @resume-slider="resumeSlider"
-              />
-            </div>
+        <div class="relative mb-16 overflow-hidden rounded-2xl">
+          <div
+            class="flex gap-6 pb-4 slider-container"
+            :class="{ paused: isSliderPaused }"
+            @mouseenter="isSliderPaused = true"
+            @mouseleave="isSliderPaused = false"
+          >
+            <!-- Première copie -->
+            <TechnologyCard
+              v-for="tech in skillsSlider"
+              :key="'first-' + tech.name"
+              :tech="tech"
+            />
+            <!-- Deuxième copie (dupliquée pour boucle infinie) -->
+            <TechnologyCard
+              v-for="tech in skillsSlider"
+              :key="'second-' + tech.name"
+              :tech="tech"
+            />
           </div>
         </div>
 
         <!-- Skills Progress Bars -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <SkillCard 
-            v-for="skill in skills" 
+          <SkillCard
+            v-for="skill in skills"
             :key="skill.name"
             :skill="skill"
           />
@@ -140,26 +131,69 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projets" class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] py-20">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-5xl font-bold mb-4 text-white">{{ t.projects.title }}</h2>
-          <p class="text-xl text-slate-300">{{ t.projects.subtitle }}</p>
-        </div>
+        <!-- Projects Section -->
+        <section id="projets" class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] py-20 overflow-visible">
+          <div class="max-w-6xl mx-auto px-4 overflow-visible">
+            <div class="text-center mb-16">
+              <h2 class="text-5xl font-bold mb-4 text-white">{{ t.projects.title }}</h2>
+              <p class="text-xl text-slate-300">{{ t.projects.subtitle }}</p>
+            </div>
 
-        <!-- Projects Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ProjectCard 
-            v-for="project in projects" 
-            :key="project.id"
-            :project="project"
-            @open-modal="openModal"
-          />
-        </div>
-      </div>
+            <!-- Loading state -->
+            <div v-if="projectsLoading" class="text-center py-20">
+              <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"></div>
+              <p class="mt-4 text-slate-300">Chargement des projets...</p>
+            </div>
 
-    </section>
+            <!-- Error state -->
+            <div v-else-if="projectsError" class="text-center py-20">
+              <p class="text-red-400 text-lg">{{ projectsError }}</p>
+              <button @click="fetchProjects" class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                Réessayer
+              </button>
+            </div>
+
+            <!-- Projects Slider -->
+            <div v-else class="mb-16">
+              <div class="flex items-center gap-4">
+                <!-- Flèche gauche -->
+                <button @click="scrollProjects(-1)"
+                        class="flex-shrink-0 w-12 h-12 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center shadow-lg transition">
+                  <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+
+                <!-- Slider -->
+                <div class="flex-1 overflow-hidden rounded-2xl">
+                  <div
+                    class="flex gap-8 pb-4 projects-slider-container"
+                    :class="{ paused: isProjectsSliderPaused }"
+                    @mouseenter="isProjectsSliderPaused = true"
+                    @mouseleave="isProjectsSliderPaused = false"
+                  >
+                    <ProjectCard
+                      v-for="project in projects"
+                      :key="'first-' + project.id"
+                      :project="project"
+                      :t="t"
+                    />
+                    <ProjectCard
+                      v-for="project in projects"
+                      :key="'second-' + project.id"
+                      :project="project"
+                      :t="t"
+                    />
+                  </div>
+                </div>
+
+                <!-- Flèche droite -->
+                <button @click="scrollProjects(1)"
+                        class="flex-shrink-0 w-12 h-12 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center shadow-lg transition">
+                  <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
 
     <!-- Diplomas Section -->
     <section id="diplomes" class="bg-gradient-to-br from-[#0a001b] to-[#1a003d] text-white py-20">
@@ -172,8 +206,8 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <DiplomaCard 
-            v-for="diploma in diplomas" 
+          <DiplomaCard
+            v-for="diploma in diplomas"
             :key="diploma.years"
             :diploma="diploma"
           />
@@ -214,7 +248,7 @@
     </footer>
 
     <!-- Modal pour les images des projets -->
-    <Modal 
+    <Modal
       :project="selectedProject"
       @close="selectedProject = null"
     />
@@ -227,15 +261,26 @@ import SkillCard from './components/SkillCard.vue'
 import TechnologyCard from './components/TechnologyCard.vue'
 import DiplomaCard from './components/DiplomaCard.vue'
 import Modal from './components/Modal.vue'
+import LanguageSwitcher from './components/LanguageSwitcher.vue'
 import { translations } from './i18n.js'
 
 export default {
   name: 'App',
-  components: { ProjectCard, SkillCard, TechnologyCard, DiplomaCard, Modal },
+  components: {
+    ProjectCard,
+    SkillCard,
+    TechnologyCard,
+    DiplomaCard,
+    Modal,
+    LanguageSwitcher
+  },
   data() {
     return {
       lang: 'fr',
       selectedProject: null,
+      isProjectsSliderPaused: false,
+      projectsLoading: false,
+      projectsError: null,
       skillsSlider: [
         { name: 'React', icon: 'fab fa-react', color: '#61dafb' },
         { name: 'JavaScript', icon: 'fab fa-js-square', color: '#f7df1e' },
@@ -304,7 +349,7 @@ export default {
           id: 6,
           title: 'Plateforme E-commerce',
           description: 'Une plateforme e-commerce complète avec panier, paiements et gestion d\'inventaire.',
-          image: 'images/hero_setup.jpg',
+          image: '/images/hero_setup.jpg',
           website: 'https://example.com',
           github: 'https://github.com',
           technologies: ['React', 'Stripe', 'Node.js']
@@ -361,16 +406,6 @@ export default {
     setLang(lang) {
       this.lang = lang
     },
-    pauseSlider() {
-      if (this.$refs.sliderContainer) {
-        this.$refs.sliderContainer.style.animationPlayState = 'paused'
-      }
-    },
-    resumeSlider() {
-      if (this.$refs.sliderContainer) {
-        this.$refs.sliderContainer.style.animationPlayState = 'running'
-      }
-    },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
     },
@@ -379,26 +414,47 @@ export default {
     },
     openModal(project) {
       this.selectedProject = project
-    }
-  },
-  mounted() {
-    // Charger les projets depuis le JSON
-    fetch('./projects.json')
-      .then(response => response.json())
-      .then(data => {
+    },
+    scrollProjects(direction) {
+      const containers = document.querySelectorAll('.projects-slider-container')
+      containers.forEach(el => {
+        const current = parseFloat(getComputedStyle(el).getPropertyValue('animation-delay')) || 0
+        el.style.animationDelay = (current - direction * 2) + 's'
+      })
+    },
+    async fetchProjects() {
+      this.projectsLoading = true
+      this.projectsError = null
+
+      try {
+        const response = await fetch('/projects.json')
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        const data = await response.json()
+
         if (data.data && data.data.length > 0) {
           this.projects = data.data.map((project, index) => ({
             id: index + 1,
             title: project.title || 'Projet ' + (index + 1),
             description: project.text || '',
-            image: project.image || 'images/hero_setup.jpg',
+            image: project.image || '/images/hero_setup.jpg',
             website: project.buttons?.find(b => b.icon === 'WebSVG')?.href || null,
             github: project.buttons?.find(b => b.icon === 'GITSVG')?.href || null,
             technologies: project.technologies || []
           }))
         }
-      })
-      .catch(error => console.log('Utilisation des projets par défaut'))
+      } catch (error) {
+        console.error('Erreur lors du chargement des projets:', error)
+        this.projectsError = 'Impossible de charger les projets. Veuillez réessayer.'
+        this.projects = []
+      } finally {
+        this.projectsLoading = false
+      }
+    }
+  },
+  mounted() {
+    this.fetchProjects()
   }
 }
 </script>

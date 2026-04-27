@@ -19,7 +19,7 @@ module.exports = {
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
         'fade-in-word': 'fadeInWord 0.6s ease-out forwards',
-        'scroll-left': 'scroll-left 15s linear infinite',
+        'scroll-left': 'scroll-left 30s linear infinite',
       },
       keyframes: {
         fadeInUp: {
