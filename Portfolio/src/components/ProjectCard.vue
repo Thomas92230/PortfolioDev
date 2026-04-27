@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card bg-white rounded-2xl p-4 overflow-hidden flex flex-col flex-shrink-0" style="width: 260px;">
+  <div class="project-card bg-white rounded-2xl p-4 overflow-hidden flex flex-col" :class="fixed ? 'flex-shrink-0' : 'w-full'" :style="fixed ? 'width: 260px' : ''">
     <!-- Project Image -->
     <div class="project-image bg-gray-200 mb-3 relative cursor-pointer flex-shrink-0"
          @click="$emit('openModal', project)">
@@ -52,6 +52,10 @@ export default {
     t: {
       type: Object,
       default: () => ({ projects: { see: 'Voir', code: 'Code' } })
+    },
+    fixed: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {

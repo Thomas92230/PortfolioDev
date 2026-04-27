@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "title": "WikiCiné",
+      "text": "Une plateforme centralisée et interactive dédiée aux cinéphiles, où les utilisateurs peuvent accéder à des informations complètes sur les films, des critiques et des discussions.",
+      "image": "/images/wikicine.jpg",
+      "technologies": ["React", "Tailwind CSS", "Supabase"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://wikicine-dawan.netlify.app/"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com/JohanChereau/wikicine-dawan.git"
+        }
+      ]
+    },
+    {
+      "title": "Métronome",
+      "text": "Métronome en ligne pour les musiciens, offrant une interface intuitive et des fonctionnalités personnalisables pour maintenir un tempo précis lors de la pratique musicale.",
+      "image": "/images/metronome.jpg",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://fantastic-cuchufli-768e7c.netlify.app/"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com/Thomas92230/metronome-music.git"
+        }
+      ]
+    },
+    {
+      "title": "Location immobilière Kasa",
+      "text": "Site de location immobilière, pour voyager dans le monde entier avec Kasa. Découvrez des locations proposant confort, activités et commerces à proximité.",
+      "image": "/images/kasa.jpg",
+      "technologies": ["HTML", "CSS", "JavaScript"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://64a8192c47d9ee0e1509f73b--frolicking-baklava-cca911.netlify.app/"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com/Thomas92230/kasaproject.git"
+        }
+      ]
+    },
+    {
+      "title": "Maquette Figma Wikiciné",
+      "text": "Maquette Figma de l'application Wikiciné, conçue pour offrir une esthétique moderne tout en privilégiant la facilité d'utilisation.",
+      "image": "/images/figma-wikicine.jpg",
+      "technologies": ["Figma", "Iconify"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://www.figma.com/proto/o62Shvfb4aE5Z16AzzWogM/Maquette-Wikicin%C3%A9?node-id=5-1879&p=f&t=HzxjyvtmHZ7r5Vzs-1&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=5%3A1879&show-proto-sidebar=1"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com/JohanChereau/wikicine-dawan.git"
+        }
+      ]
+    },
+    {
+      "title": "Agence d'évènementiel 77events",
+      "text": "Site pour une agence d'évènementiel qui organise des prestations partout dans le monde. L'objectif de la mission était de debugger le site de l'agence à l'aide de tests afin de simuler les différents composants et corriger les bugs à la source.",
+      "image": "/images/77events.jpg",
+      "technologies": ["HTML", "CSS", "React", "Jest"],
+      "buttons": [
+        {
+          "aria": "Voir le site",
+          "icon": "WebSVG",
+          "href": "https://64a604241d362213a14d43e5--sensational-croquembouche-903096.netlify.app/"
+        },
+        {
+          "aria": "Code source",
+          "icon": "GITSVG",
+          "href": "https://github.com/Thomas92230/event.git"
+        }
+      ]
+    }
+  ]
+}

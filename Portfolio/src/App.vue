@@ -153,16 +153,25 @@
               </button>
             </div>
 
-            <!-- Projects Slider -->
+            <!-- Mobile : colonne simple -->
             <div v-else class="mb-16">
-              <div class="flex items-center gap-4">
-                <!-- Flèche gauche -->
+              <div class="flex flex-col gap-6 md:hidden">
+                <ProjectCard
+                  v-for="project in projects"
+                  :key="project.id"
+                  :project="project"
+                  :t="t"
+                  class="w-full"
+                />
+              </div>
+
+              <!-- Desktop : slider -->
+              <div class="hidden md:flex items-center gap-4">
                 <button @click="scrollProjects(-1)"
                         class="flex-shrink-0 w-12 h-12 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center shadow-lg transition">
                   <i class="fas fa-chevron-left text-lg"></i>
                 </button>
 
-                <!-- Slider -->
                 <div class="flex-1 overflow-hidden rounded-2xl">
                   <div
                     class="flex gap-8 pb-4 projects-slider-container"
@@ -175,17 +184,18 @@
                       :key="'first-' + project.id"
                       :project="project"
                       :t="t"
+                      :fixed="true"
                     />
                     <ProjectCard
                       v-for="project in projects"
                       :key="'second-' + project.id"
                       :project="project"
                       :t="t"
+                      :fixed="true"
                     />
                   </div>
                 </div>
 
-                <!-- Flèche droite -->
                 <button @click="scrollProjects(1)"
                         class="flex-shrink-0 w-12 h-12 bg-white/20 hover:bg-white/40 text-white rounded-full flex items-center justify-center shadow-lg transition">
                   <i class="fas fa-chevron-right text-lg"></i>
