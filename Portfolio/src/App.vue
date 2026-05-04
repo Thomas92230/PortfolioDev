@@ -68,7 +68,7 @@
                  class="px-6 py-3 rounded-lg border-2 border-white text-white font-semibold text-sm hover:bg-white hover:text-slate-900 transition">
                 <i class="fab fa-linkedin mr-2"></i> LinkedIn
               </a>
-              <a href="/images/Icham_BOUDEHANE_CV_Dev.pdf" download
+              <a href="/images/Icham_BOUDEHANE_Dev_Concepteur.pdf" download
                  class="px-6 py-3 rounded-lg border-2 border-white text-white font-semibold text-sm hover:bg-white hover:text-slate-900 transition">
                 <i class="fas fa-download mr-2"></i> {{ t.hero.downloadCV }}
               </a>
